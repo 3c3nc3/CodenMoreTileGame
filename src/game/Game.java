@@ -39,6 +39,7 @@ public class Game implements Runnable {
       display.getCanvas().createBufferStrategy(3);
       return;
     }
+    
     g = bs.getDrawGraphics();
     g.clearRect(0, 0, display.getLength(), display.getHeight());
 
@@ -78,15 +79,38 @@ public class Game implements Runnable {
     g.drawImage(Assets.dirt, 384, 160, null);
     g.drawImage(Assets.dirt, 416, 160, null);
     
+//    System.out.println(tps);
+    
     bs.show();
     g.dispose();
   }
   
   public void run() {
     init();
-    while (running) {
+    long lastTime = System.nanoTime();
+    double amountOfTicks = 60.0;
+    double ns = 1000000000 / amountOfTicks;
+    double delta = 0;
+    long timer = System.currentTimeMillis();
+    int frames = 0;
+    while(running) {
+     long now = System.nanoTime();
+     delta += (now - lastTime) / ns;
+     lastTime = now;
+     while(delta >= 1) {
       tick();
-      render();
+      //updates++;
+      delta--;
+     }
+     render();
+     frames++;
+
+     if(System.currentTimeMillis() - timer > 1000) {
+      timer += 1000;
+      System.out.println(frames);
+      frames = 0;
+      //updates = 0;
+     }
     }
     stop();
   }
