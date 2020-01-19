@@ -25,7 +25,7 @@ public class Game implements Runnable {
   
   private void init() {
     display = new Display();
-    display.getCanvas().setBackground(Color.DARK_GRAY);
+    display.getCanvas().setBackground(Color.LIGHT_GRAY);
     Assets.init();
   }
   
