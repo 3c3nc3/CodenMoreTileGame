@@ -5,8 +5,6 @@ import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
 import display.Display;
-import display.gfx.ImageLoader;
-import display.gfx.Spritesheet;
 
 public class Game implements Runnable {
   private static boolean instanceOf = false;
@@ -18,19 +16,17 @@ public class Game implements Runnable {
   private BufferStrategy bs;
   private Graphics g;
   
-  Spritesheet s = new Spritesheet(ImageLoader.LoadImage("/textures/IconSpritesheet.png/"));
-  
   public Game() throws IllegalAccessException {
     if (instanceOf) 
       throw new IllegalAccessException("An instance of this class already exists!");
     else 
       instanceOf = true;
-    s.autoCrop(32, 32);
   }
   
   private void init() {
     display = new Display();
     display.getCanvas().setBackground(Color.DARK_GRAY);
+    Assets.init();
   }
   
   private void tick() {
@@ -46,15 +42,41 @@ public class Game implements Runnable {
     g = bs.getDrawGraphics();
     g.clearRect(0, 0, display.getLength(), display.getHeight());
 
-    g.drawImage(s.getSprite(0), 0, 0, null);
-    g.drawImage(s.getSprite(1), 32, 0, null);
-    g.drawImage(s.getSprite(2), 64, 0, null);
-    g.drawImage(s.getSprite(3), 96, 0, null);
-    g.drawImage(s.getSprite(4), 128, 0, null);
-    g.drawImage(s.getSprite(5), 256, 64, null);
-    g.drawImage(s.getSprite(6), 0, 32, null);
-    g.drawImage(s.getSprite(7), 0, 64, null);
-    g.drawImage(s.getSprite(8), 0, 128, null);
+    g.drawImage(Assets.player, 0, 0, null);
+    g.drawImage(Assets.plasma, 64, 0, null);
+    g.drawImage(Assets.grass, 128, 0, null);
+    g.drawImage(Assets.dirt, 192, 0, null);
+    g.drawImage(Assets.stone, 256, 0, null);
+    
+    g.drawImage(Assets.bricks, 320, 0, null);
+    g.drawImage(Assets.bricks, 352, 0, null);
+    g.drawImage(Assets.bricks, 384, 0, null);
+    g.drawImage(Assets.bricks, 416, 0, null);
+    
+    g.drawImage(Assets.bricks, 320, 32, null);
+    g.drawImage(Assets.bricks, 352, 32, null);
+    g.drawImage(Assets.bricks, 384, 32, null);
+    g.drawImage(Assets.bricks, 416, 32, null);
+    
+    g.drawImage(Assets.bricks, 320, 64, null);
+    g.drawImage(Assets.bricks, 352, 64, null);
+    g.drawImage(Assets.bricks, 384, 64, null);
+    g.drawImage(Assets.bricks, 416, 64, null);
+    
+    g.drawImage(Assets.bricks, 320, 96, null);
+    g.drawImage(Assets.bricks, 352, 96, null);
+    g.drawImage(Assets.bricks, 384, 96, null);
+    g.drawImage(Assets.bricks, 416, 96, null);
+
+    g.drawImage(Assets.dirt, 320, 128, null);
+    g.drawImage(Assets.dirt, 352, 128, null);
+    g.drawImage(Assets.dirt, 384, 128, null);
+    g.drawImage(Assets.dirt, 416, 128, null);
+    
+    g.drawImage(Assets.dirt, 320, 160, null);
+    g.drawImage(Assets.dirt, 352, 160, null);
+    g.drawImage(Assets.dirt, 384, 160, null);
+    g.drawImage(Assets.dirt, 416, 160, null);
     
     bs.show();
     g.dispose();
