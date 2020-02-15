@@ -43,43 +43,41 @@ public class Game implements Runnable {
     g = bs.getDrawGraphics();
     g.clearRect(0, 0, display.getLength(), display.getHeight());
 
-    g.drawImage(Assets.player, 0, 0, null);
-    g.drawImage(Assets.plasma, 64, 0, null);
-    g.drawImage(Assets.grass, 128, 0, null);
-    g.drawImage(Assets.dirt, 192, 0, null);
-    g.drawImage(Assets.stone, 256, 0, null);
-    
-    g.drawImage(Assets.bricks, 320, 0, null);
-    g.drawImage(Assets.bricks, 352, 0, null);
-    g.drawImage(Assets.bricks, 384, 0, null);
-    g.drawImage(Assets.bricks, 416, 0, null);
-    
-    g.drawImage(Assets.bricks, 320, 32, null);
-    g.drawImage(Assets.bricks, 352, 32, null);
-    g.drawImage(Assets.bricks, 384, 32, null);
-    g.drawImage(Assets.bricks, 416, 32, null);
-    
-    g.drawImage(Assets.bricks, 320, 64, null);
-    g.drawImage(Assets.bricks, 352, 64, null);
-    g.drawImage(Assets.bricks, 384, 64, null);
-    g.drawImage(Assets.bricks, 416, 64, null);
-    
-    g.drawImage(Assets.bricks, 320, 96, null);
-    g.drawImage(Assets.bricks, 352, 96, null);
-    g.drawImage(Assets.bricks, 384, 96, null);
-    g.drawImage(Assets.bricks, 416, 96, null);
+   g.drawImage(Assets.player, 0, 0, null);
+   g.drawImage(Assets.plasma, 64, 0, null);
+   g.drawImage(Assets.grass, 128, 0, null);
+   g.drawImage(Assets.dirt, 192, 0, null);
+   g.drawImage(Assets.stone, 256, 0, null);
+   
+   g.drawImage(Assets.bricks, 320, 0, null);
+   g.drawImage(Assets.bricks, 352, 0, null);
+   g.drawImage(Assets.bricks, 384, 0, null);
+   g.drawImage(Assets.bricks, 416, 0, null);
+   
+   g.drawImage(Assets.bricks, 320, 32, null);
+   g.drawImage(Assets.bricks, 352, 32, null);
+   g.drawImage(Assets.bricks, 384, 32, null);
+   g.drawImage(Assets.bricks, 416, 32, null);
+   
+   g.drawImage(Assets.bricks, 320, 64, null);
+   g.drawImage(Assets.bricks, 352, 64, null);
+   g.drawImage(Assets.bricks, 384, 64, null);
+   g.drawImage(Assets.bricks, 416, 64, null);
+   
+   g.drawImage(Assets.bricks, 320, 96, null);
+   g.drawImage(Assets.bricks, 352, 96, null);
+   g.drawImage(Assets.bricks, 384, 96, null);
+   g.drawImage(Assets.bricks, 416, 96, null);
 
-    g.drawImage(Assets.dirt, 320, 128, null);
-    g.drawImage(Assets.dirt, 352, 128, null);
-    g.drawImage(Assets.dirt, 384, 128, null);
-    g.drawImage(Assets.dirt, 416, 128, null);
-    
-    g.drawImage(Assets.dirt, 320, 160, null);
-    g.drawImage(Assets.dirt, 352, 160, null);
-    g.drawImage(Assets.dirt, 384, 160, null);
-    g.drawImage(Assets.dirt, 416, 160, null);
-    
-//    System.out.println(tps);
+   g.drawImage(Assets.dirt, 320, 128, null);
+   g.drawImage(Assets.dirt, 352, 128, null);
+   g.drawImage(Assets.dirt, 384, 128, null);
+   g.drawImage(Assets.dirt, 416, 128, null);
+   
+   g.drawImage(Assets.dirt, 320, 160, null);
+   g.drawImage(Assets.dirt, 352, 160, null);
+   g.drawImage(Assets.dirt, 384, 160, null);
+   g.drawImage(Assets.dirt, 416, 160, null);
     
     bs.show();
     g.dispose();
